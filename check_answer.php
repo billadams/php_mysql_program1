@@ -16,6 +16,7 @@
     } else {
         $result = number_format(divide($num1, $num2), 2);
     }
+
     $errors = array();
     if ($answer === FALSE) {
         $error_message = 'Please enter an answer in decimal format.';
@@ -51,7 +52,7 @@
             <?php endif; ?>
             <p>Your answer: <?php echo number_format($answer, 2); ?></p>
             <p>Correct answer: <?php echo number_format($result, 2); ?></p>
-            <a href="index.php">Try another equation</a>
+            <a href="./">Try another equation</a>
         </div>
     </div>
 </body>

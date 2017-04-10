@@ -50,7 +50,7 @@
                 <?php endforeach; ?>
             <?php endif; ?>
 
-            <p><a href="index.php">Request a new equation.</a></p>
+            <p><a href="./">Request a new equation.</a></p>
 
             <input type="hidden" name="num1" value="<?php echo $num1; ?>">
             <input type="hidden" name="num2" value="<?php echo $num2; ?>">
