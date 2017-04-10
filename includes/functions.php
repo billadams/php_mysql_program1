@@ -4,13 +4,10 @@ function generateRandomNumber($min, $max) {
     return $num = mt_rand($min, $max);
 }
 
-function generateRandomOperator() {
-    // Create an array of possible operators. Get a random position
-    // in the array and return the operator in that position.
-    $operators = array('+', '-', '*', '/');
-    $random_num = mt_rand(0, 3);
-
-    return $random_operator = $operators[$random_num];
+function generateRandomOperator($operators) {
+    // Get a random key position in the array
+    // and return the key in that position.
+    return $random_key = array_rand($operators);
 }
 
 function add($num1, $num2) {

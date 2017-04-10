@@ -2,19 +2,23 @@
     if (!isset($answer)) { $answer = ''; }
     if (!isset($num1)) { $num1 = ''; }
     if (!isset($num2)) { $num2 = ''; }
-    if (!isset($random_operator)) { $random_operator = ''; }
+    if (!isset($random_key)) { $random_key = ''; }
+    if (!isset($operator)) { $operator = ''; }
 
     include_once('includes/functions.php');
 
     if (empty($errors)) {
-        // Generate two random numbers;
+        // Generate two random numbers.
         $min = 0;
         $max = 100;
         $num1 = generateRandomNumber($min, $max);
         $num2 = generateRandomNumber($min, $max);
 
+        // Create the $operators array.
+        $operators = array('add' => '+', 'subtract' => '-', 'multiply' => '*', 'divide' => '/');
         // Generate one of the four operators randomly.
-        $random_operator = generateRandomOperator();
+        $random_key = generateRandomOperator($operators);
+        $operator = $operators[$random_key];
     }
 ?>
 
@@ -34,7 +38,10 @@
             <h1>Check Your Math Skills</h1>
         </header>
         <form id="check_answer" action="check_answer.php" method="post">
-            <label for="answer">What is <?php echo $num1; ?> <?php echo $random_operator; ?> <?php echo $num2; ?>?</label>
+            <p>For division problems, enter your answer to the nearest hundredth (e.g. 2.65). Remember to round up as well! (e.g. 2.657 becomes 2.66).</p>
+            <p>For subtraction problems, negative answers are possible.</p>
+
+            <label for="answer">What is <?php echo $num1; ?> <?php echo $operator; ?> <?php echo $num2; ?>?</label>
             <input type="text" id="answer" name="answer" placeholder="Your Answer..." autofocus>
 
             <?php if (!empty($errors)) :
@@ -43,9 +50,12 @@
                 <?php endforeach; ?>
             <?php endif; ?>
 
+            <p><a href="index.php">Request a new equation.</a></p>
+
             <input type="hidden" name="num1" value="<?php echo $num1; ?>">
             <input type="hidden" name="num2" value="<?php echo $num2; ?>">
-            <input type="hidden" name="operator" value="<?php echo $random_operator; ?>">
+            <input type="hidden" name="operator_string" value="<?php echo htmlspecialchars($random_key); ?>">
+            <input type="hidden" name="operator" value="<?php echo htmlspecialchars($operator); ?>">
 
             <input type="submit" value="Check Answer">
         </form>

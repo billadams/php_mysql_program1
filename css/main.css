@@ -81,12 +81,18 @@ h1 {
 }
 h2 {
     font-size: 1.5em;
+    margin-bottom: .5em;
 }
-p.error {
+p {
+    margin-bottom: 1em;
+}
+p.error, .incorrect {
     color: red;
-    margin-bottom: 2em;
 }
-form {
+.correct {
+    color: green;
+}
+form, #result {
     background-color: #eeeeee;
     border: 1px solid #cccccc;
     border-radius: 5px;
