@@ -18,7 +18,10 @@
     }
 
     $errors = array();
-    if ($answer === FALSE) {
+    if ($num1 === FALSE || $num2 === FALSE) {
+        $error_message = 'A numeric part of the question has been changed to a non-numeric value! Request a new equation.';
+        $errors[] = $error_message;
+    } else if ($answer === FALSE) {
         $error_message = 'Please enter an answer in decimal format.';
         $errors[] = $error_message;
     }
@@ -46,9 +49,9 @@
         </header>
         <div id="result">
             <?php if ($result != $answer) : ?>
-                <h2 class="incorrect">INCORRECT!</h2>
+                <h2 class="incorrect">Incorrect!</h2>
             <?php else : ?>
-                <h2 class="correct">CORRECT!</h2>
+                <h2 class="correct">Correct!</h2>
             <?php endif; ?>
             <p>Your answer: <?php echo number_format($answer, 2); ?></p>
             <p>Correct answer: <?php echo number_format($result, 2); ?></p>

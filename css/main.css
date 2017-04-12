@@ -92,6 +92,9 @@ p.error, .incorrect {
 .correct {
     color: green;
 }
+.incorrect, .correct {
+    text-transform: uppercase;
+}
 form, #result {
     background-color: #eeeeee;
     border: 1px solid #cccccc;
