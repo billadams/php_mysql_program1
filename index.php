@@ -1,4 +1,9 @@
 <?php
+/* Bill Adams
+ * 4/12/2017
+ * Program 1
+ */
+
     if (!isset($answer)) { $answer = ''; }
     if (!isset($num1)) { $num1 = ''; }
     if (!isset($num2)) { $num2 = ''; }
@@ -10,7 +15,7 @@
     if (empty($errors)) {
         // Generate two random numbers.
         $min = 0;
-        $max = 100;
+        $max = 10;
         $num1 = generateRandomNumber($min, $max);
         $num2 = generateRandomNumber($min, $max);
 

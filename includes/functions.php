@@ -1,4 +1,8 @@
 <?php
+/* Bill Adams
+ * 4/12/2017
+ * Program 1
+ */
 
 function generateRandomNumber($min, $max) {
     return $num = mt_rand($min, $max);

@@ -1,4 +1,9 @@
 <?php
+/* Bill Adams
+ * 4/12/2017
+ * Program 1
+ */
+
     $answer = filter_input(INPUT_POST, 'answer', FILTER_VALIDATE_FLOAT);
     $num1 = filter_input(INPUT_POST, 'num1', FILTER_VALIDATE_FLOAT);
     $num2 = filter_input(INPUT_POST, 'num2', FILTER_VALIDATE_FLOAT);
